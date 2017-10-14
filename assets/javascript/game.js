@@ -44,7 +44,7 @@ var getRandom = function (min, max) {
 // Starts game and restarts game
 var startGame = function() {
 	// Reset current score
-	var currentScore = 0;
+	currentScore = 0;
 
 	// Set a new target score between 19 and 120
 	var targetScore = getRandom(19, 120);
@@ -91,6 +91,12 @@ var checkWin = function() {
 
 		// Add to Loss counter
 		lossCount++;
+
+		// Change Loss count counter
+		$("#lossCount").html(lossCount);
+
+		// Restart game
+		startGame();
 	}
 	else if (currentScore == targetScore) {
 		alert("You won, congratulations!");
@@ -98,6 +104,12 @@ var checkWin = function() {
 
 		// Add to Win counter
 		winCount++;
+
+		//Change win counter counter
+		$("#winCount").html(winCount);
+
+		// Restart game
+		startGame();
 	}
 }
 
